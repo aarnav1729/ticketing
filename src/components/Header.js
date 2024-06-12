@@ -6,7 +6,6 @@ const Header = () => {
   return (
     <div className="header">
       <h1>Open</h1>
-      <button>+ New Ticket</button>
     </div>
   );
 };

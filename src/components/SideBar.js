@@ -5,7 +5,7 @@ import './Sidebar.css';
 const Sidebar = () => {
   return (
     <div className="sidebar">
-      <div className="logo">spiceworks</div>
+      <div className="logo">Premier Energies Pvt Ltd Ticketing System</div>
       <ul>
         <li><span className="icon">🏠</span></li>
         <li><span className="icon">📩</span></li>

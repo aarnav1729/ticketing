@@ -7,3 +7,12 @@
   flex: 1;
   padding: 20px;
 }
+
+.new-ticket-button {
+  background: #00aaff;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
