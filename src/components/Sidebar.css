@@ -1,7 +1,7 @@
 /* src/components/Sidebar.css */
 .sidebar {
-    width: 200px;
-    background: #333;
+    width: 160px;
+    background: #2f2f2f;
     color: white;
     height: 100vh;
     padding: 20px 0;
@@ -26,4 +26,9 @@
   .sidebar ul li .icon {
     font-size: 1.5em;
   }
-  
+   
+  .logo img {
+    width: 100%;
+    height: auto;
+    max-height: 100px; ;
+  }

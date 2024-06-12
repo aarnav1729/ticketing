@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Custom Ticketing Tool for Premier Energies Pvt Ltd
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

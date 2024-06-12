@@ -1,8 +1,7 @@
 /* src/components/Header.css */
 .header {
     display: flex;
-    justify-content: space-between;
-    padding: 20px;
+    padding: 7px;
     background: #222;
     color: white;
   }

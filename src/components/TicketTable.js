@@ -17,7 +17,7 @@ const TicketTable = () => {
     },
     {
       id: 1,
-      summary: 'Welcome to the Spiceworks Cloud Help Desk!',
+      summary: 'Welcome to the Premier Energies Pvt Ltd Custom Ticketing Solution!',
       assignee: 'aarnav singh',
       organization: 'webstax',
       priority: 'Medium',
