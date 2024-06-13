@@ -5,19 +5,16 @@ import './TicketRow.css';
 const TicketRow = ({ ticket }) => {
   return (
     <tr>
-      <td>{ticket.id}</td>
-      <td>{ticket.summary}</td>
-      <td><a href="#">{ticket.assignee}</a></td>
-      <td>{ticket.creator}</td>
       <td>{ticket.organization}</td>
+      <td>{ticket.contact}</td>
+      <td>{ticket.category}</td>
+      <td>{ticket.summary}</td>
+      <td>{ticket.assignee}</td>
       <td>{ticket.priority}</td>
-      <td>-</td>
-      <td>{ticket.status}</td>
+      <td>{ticket.attachment}</td>
       <td>{ticket.created}</td>
       <td>{ticket.updated}</td>
-      <td>-</td>
     </tr>
   );
 };
-
 export default TicketRow;
