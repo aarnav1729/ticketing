@@ -11,6 +11,8 @@ const TicketTable = ({ tickets }) => {
           <th>Organization</th>
           <th>Contact</th>
           <th>Category</th>
+          <th>Company Code</th>
+          <th>Subcategory</th>
           <th>Summary</th>
           <th>Assignee</th>
           <th>Priority</th>

@@ -8,6 +8,8 @@ const TicketRow = ({ ticket }) => {
       <td>{ticket.organization}</td>
       <td>{ticket.contact}</td>
       <td>{ticket.category}</td>
+      <td>{ticket.companycode}</td>
+      <td>{ticket.subcategory}</td>
       <td>{ticket.summary}</td>
       <td>{ticket.assignee}</td>
       <td>{ticket.priority}</td>

@@ -9,8 +9,8 @@ const NewTicketForm = ({ onClose, onAddTicket }) => {
 
   const subcategoryOptions = {
     Other: ['N/A'],
-    SAP: ['UI Bug', 'Backend Bug', 'Performance Bug'],
-    IT: ['Internet', 'Desktop', 'Email', 'Virus', 'Hardware', 'Software'],
+    SAP: ['User Access', 'FICO', 'SD', 'MM', 'PP', 'QM'],
+    IT: ['Internet','Laptop', 'Desktop', 'Email', 'Anti-Virus', 'Hardware', 'Software'],
   };
 
   const handleCategoryChange = (e) => {
@@ -42,6 +42,7 @@ const NewTicketForm = ({ onClose, onAddTicket }) => {
         <button className="close-button" onClick={onClose}>✖️</button>
         <h2>Create a ticket</h2>
         <form onSubmit={handleSubmit}>
+          
           <div className="form-group">
             <label>Organization (required)</label>
             <select name="organization" defaultValue="Premier Energies Limited" required>
@@ -50,6 +51,7 @@ const NewTicketForm = ({ onClose, onAddTicket }) => {
               <option value="premier photovoltaic pvt ltd">Premier Photovoltaic Pvt Ltd</option>
             </select>
           </div>
+
           <div className="form-group">
             <label>Contact (required)</label>
             <input type="text" name="contact" required />
@@ -62,6 +64,17 @@ const NewTicketForm = ({ onClose, onAddTicket }) => {
               <option value="SAP">SAP</option>
               <option value="IT">IT</option>
               <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div className="form-group">
+            <label>Company Code (required)</label>
+            <select name="companycode" defaultValue="1000" required>
+              <option value="1000">1000</option>
+              <option value="2000">2000</option>
+              <option value="3000">3000</option>
+              <option value="4000">4000</option>
+              <option value="5000">5000</option>
             </select>
           </div>
 
