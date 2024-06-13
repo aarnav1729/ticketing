@@ -4,24 +4,21 @@ import Sidebar from './components/SideBar';
 import Header from './components/Header';
 import TicketTable from './components/TicketTable';
 import NewTicketForm from './components/NewTicketForm';
+import Login from './components/auth/Login';
+import Register from './components/auth/Register';
 import './App.css';
 
 const App = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [tickets, setTickets] = useState([]);
 
-  // Load tickets from local storage when the component mounts
   useEffect(() => {
-    const savedTickets = localStorage.getItem('tickets');
-    if (savedTickets) {
-      setTickets(JSON.parse(savedTickets));
+    const token = localStorage.getItem('token');
+    if (token) {
+      setIsAuthenticated(true);
     }
   }, []);
-
-  // Save tickets to local storage whenever they change
-  useEffect(() => {
-    localStorage.setItem('tickets', JSON.stringify(tickets));
-  }, [tickets]);
 
   const handleNewTicketClick = () => {
     setShowForm(true);
@@ -35,13 +32,26 @@ const App = () => {
     setTickets([...tickets, newTicket]);
   };
 
+  const handleLogin = () => {
+    setIsAuthenticated(true);
+  };
+
+  if (!isAuthenticated) {
+    return (
+      <div className="auth-container">
+        <Login onLogin={handleLogin} />
+        <Register />
+      </div>
+    );
+  }
+
   return (
     <div className="app">
       <Sidebar />
       <div className="main">
         <Header />
         <button onClick={handleNewTicketClick} className="new-ticket-button">+ New Ticket</button>
-        <TicketTable tickets={tickets} />
+        <TicketTable tickets={tickets} setTickets={setTickets} />
         {showForm && <NewTicketForm onClose={handleCloseForm} onAddTicket={addTicket} />}
       </div>
     </div>
