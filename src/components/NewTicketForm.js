@@ -90,8 +90,8 @@ const NewTicketForm = ({ onClose, onAddTicket }) => {
             <label>Assignee</label>
             <select name="assignee" defaultValue="Unassigned">
               <option value="Unassigned">Unassigned</option>
-              <option value="John Doe">John Doe</option>
-              <option value="Jane Smith">Jane Smith</option>
+              <option value="John Doe">Aarnav Singh</option>
+              <option value="Jane Smith">Kishore Kumar</option>
             </select>
           </div>
 
