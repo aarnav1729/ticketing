@@ -1,8 +1,24 @@
 // src/components/NewTicketForm.js
-import React from 'react';
+import React, { useState } from 'react';
 import './NewTicketForm.css';
 
 const NewTicketForm = ({ onClose, onAddTicket }) => {
+
+  const [selectedCategory, setSelectedCategory] = useState('');
+  const [subcategories, setSubcategories] = useState([]);
+
+  const subcategoryOptions = {
+    Other: ['N/A'],
+    SAP: ['UI Bug', 'Backend Bug', 'Performance Bug'],
+    IT: ['Internet', 'Desktop', 'Email', 'Virus', 'Hardware', 'Software'],
+  };
+
+  const handleCategoryChange = (e) => {
+    const category = e.target.value;
+    setSelectedCategory(category);
+    setSubcategories(subcategoryOptions[category] || []);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -17,7 +33,7 @@ const NewTicketForm = ({ onClose, onAddTicket }) => {
     if (typeof onAddTicket === 'function') {
       onAddTicket(newTicket);
     }
-    onClose(); 
+    onClose();
   };
 
   return (
@@ -41,10 +57,22 @@ const NewTicketForm = ({ onClose, onAddTicket }) => {
 
           <div className="form-group">
             <label>Category</label>
-            <select name="category" defaultValue="SAP/IT/Other">
+            <select name="category" defaultValue="" onChange={handleCategoryChange}>
+              <option value="" disabled>Select a category</option>
               <option value="SAP">SAP</option>
               <option value="IT">IT</option>
               <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div className="form-group">
+            <label>Subcategory</label>
+            <select name="subcategory" required>
+              {subcategories.map((subcategory, index) => (
+                <option key={index} value={subcategory}>
+                  {subcategory}
+                </option>
+              ))}
             </select>
           </div>
 
@@ -61,10 +89,9 @@ const NewTicketForm = ({ onClose, onAddTicket }) => {
           <div className="form-group">
             <label>Assignee</label>
             <select name="assignee" defaultValue="Unassigned">
-              <option value="Unspecified">Unspecified</option>
-              <option value="bug">Bug</option>
-              <option value="feature_request">Feature Request</option>
-              <option value="customer_support">Customer Support</option>
+              <option value="Unassigned">Unassigned</option>
+              <option value="John Doe">John Doe</option>
+              <option value="Jane Smith">Jane Smith</option>
             </select>
           </div>
 
