@@ -2,6 +2,12 @@
 
 ![1](https://github.com/aarnav1729/ticketing/assets/72580375/496668ee-3658-4bd4-bbda-499270a2f0e0)
 
+![2](https://github.com/aarnav1729/ticketing/assets/72580375/f8ef5a6f-f314-47c8-9174-bee04b89f7ea)
+
+![3](https://github.com/aarnav1729/ticketing/assets/72580375/8e50667a-ecc8-4525-b2f5-2c45671359c5)
+
+![4](https://github.com/aarnav1729/ticketing/assets/72580375/aa858cdc-56d6-4cad-be0b-b700be80b272)
+
 
 ## Getting Started with Create React App
 
