@@ -36,6 +36,11 @@ const App = () => {
     setIsAuthenticated(true);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    setIsAuthenticated(false);
+  };
+
   if (!isAuthenticated) {
     return (
       <div className="auth-container">
@@ -49,7 +54,7 @@ const App = () => {
     <div className="app">
       <Sidebar />
       <div className="main">
-        <Header />
+        <Header onLogout={handleLogout} />
         <button onClick={handleNewTicketClick} className="new-ticket-button">+ New Ticket</button>
         <TicketTable tickets={tickets} setTickets={setTickets} />
         {showForm && <NewTicketForm onClose={handleCloseForm} onAddTicket={addTicket} />}
